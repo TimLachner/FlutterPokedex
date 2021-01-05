@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-
 part 'pokemon.freezed.dart';
 part 'pokemon.g.dart';
 
@@ -12,5 +11,5 @@ abstract class Pokemon with _$Pokemon {
     Map<String, String> sprites,
 }) = _Pokemon;
 
-  factory Pokemon.fromJson(Map<String, String> json) => _$PokemonFromJson(json);
+  factory Pokemon.fromJson(Map<String, dynamic> json) => _$PokemonFromJson(json);
 }

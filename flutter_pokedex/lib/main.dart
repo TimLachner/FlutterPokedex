@@ -52,8 +52,8 @@ class PokeTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: CachedNetworkImage(
-        imageUrl: pokemon.sprites['front_default'] as String,
+          imageUrl: pokemon.sprites['front_default'] as String
       ),
     );
-  } 
+  }
 }

@@ -16,6 +16,8 @@ class _PokeAppState extends State<PokeApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'Rubik'),
       home: ListPage(),
     );
   }

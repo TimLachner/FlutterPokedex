@@ -41,7 +41,18 @@ dev_dependencies:
   json_serializable: any
 
 flutter:
-  uses-material-design: true
+
+
+fonts:
+  - family: Rubik
+    fonts:
+      - assests: Rubik-Regular.ttf
+      - assests: Rubik-Medium.ttf
+      - assests: Rubik-Light.ttf
+
+uses-material-design: true
+
+
 
   # To add assets to your application, add an assets section, like this:
   # assets:

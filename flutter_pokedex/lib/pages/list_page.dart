@@ -26,7 +26,8 @@ class _ListPageState extends State<ListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Pokedex"), backgroundColor: Colors.cyan),
+      backgroundColor: Colors.teal,
+      appBar: AppBar(title: Text("Pokedex"), backgroundColor: Colors.teal),
       body: _pokelist.isEmpty ? Center(child: CircularProgressIndicator()) : ListView.builder(
         itemCount: _pokelist.length,
         itemBuilder: (context, index) {
@@ -59,13 +60,13 @@ class PokeTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       margin: const EdgeInsets.all(8),
-      color: Colors.blueGrey,
+      color: Colors.grey,
       child: Row(
         children: [
           CircleAvatar(
 
             backgroundColor: Colors.white,
-            radius: 90,
+            radius: 70,
             backgroundImage: pokemon.loaded != null ? CachedNetworkImageProvider( pokemon.sprites['front_default']) : null,
           ),
           Spacer(),

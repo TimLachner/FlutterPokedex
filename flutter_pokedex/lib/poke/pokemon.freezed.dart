@@ -18,8 +18,15 @@ class _$PokemonTearOff {
 
 // ignore: unused_element
   _Pokemon call(
-      {String name, int weight, int height, Map<String, dynamic> sprites}) {
+      {@JsonValue(false) bool loaded,
+      @JsonValue('') String url,
+      String name,
+      int weight,
+      int height,
+      Map<String, dynamic> sprites}) {
     return _Pokemon(
+      loaded: loaded,
+      url: url,
       name: name,
       weight: weight,
       height: height,
@@ -39,6 +46,10 @@ const $Pokemon = _$PokemonTearOff();
 
 /// @nodoc
 mixin _$Pokemon {
+  @JsonValue(false)
+  bool get loaded;
+  @JsonValue('')
+  String get url;
   String get name;
   int get weight;
   int get height;
@@ -53,7 +64,12 @@ abstract class $PokemonCopyWith<$Res> {
   factory $PokemonCopyWith(Pokemon value, $Res Function(Pokemon) then) =
       _$PokemonCopyWithImpl<$Res>;
   $Res call(
-      {String name, int weight, int height, Map<String, dynamic> sprites});
+      {@JsonValue(false) bool loaded,
+      @JsonValue('') String url,
+      String name,
+      int weight,
+      int height,
+      Map<String, dynamic> sprites});
 }
 
 /// @nodoc
@@ -66,12 +82,16 @@ class _$PokemonCopyWithImpl<$Res> implements $PokemonCopyWith<$Res> {
 
   @override
   $Res call({
+    Object loaded = freezed,
+    Object url = freezed,
     Object name = freezed,
     Object weight = freezed,
     Object height = freezed,
     Object sprites = freezed,
   }) {
     return _then(_value.copyWith(
+      loaded: loaded == freezed ? _value.loaded : loaded as bool,
+      url: url == freezed ? _value.url : url as String,
       name: name == freezed ? _value.name : name as String,
       weight: weight == freezed ? _value.weight : weight as int,
       height: height == freezed ? _value.height : height as int,
@@ -87,7 +107,12 @@ abstract class _$PokemonCopyWith<$Res> implements $PokemonCopyWith<$Res> {
       __$PokemonCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String name, int weight, int height, Map<String, dynamic> sprites});
+      {@JsonValue(false) bool loaded,
+      @JsonValue('') String url,
+      String name,
+      int weight,
+      int height,
+      Map<String, dynamic> sprites});
 }
 
 /// @nodoc
@@ -101,12 +126,16 @@ class __$PokemonCopyWithImpl<$Res> extends _$PokemonCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object loaded = freezed,
+    Object url = freezed,
     Object name = freezed,
     Object weight = freezed,
     Object height = freezed,
     Object sprites = freezed,
   }) {
     return _then(_Pokemon(
+      loaded: loaded == freezed ? _value.loaded : loaded as bool,
+      url: url == freezed ? _value.url : url as String,
       name: name == freezed ? _value.name : name as String,
       weight: weight == freezed ? _value.weight : weight as int,
       height: height == freezed ? _value.height : height as int,
@@ -120,11 +149,23 @@ class __$PokemonCopyWithImpl<$Res> extends _$PokemonCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_Pokemon implements _Pokemon {
-  _$_Pokemon({this.name, this.weight, this.height, this.sprites});
+  _$_Pokemon(
+      {@JsonValue(false) this.loaded,
+      @JsonValue('') this.url,
+      this.name,
+      this.weight,
+      this.height,
+      this.sprites});
 
   factory _$_Pokemon.fromJson(Map<String, dynamic> json) =>
       _$_$_PokemonFromJson(json);
 
+  @override
+  @JsonValue(false)
+  final bool loaded;
+  @override
+  @JsonValue('')
+  final String url;
   @override
   final String name;
   @override
@@ -136,13 +177,17 @@ class _$_Pokemon implements _Pokemon {
 
   @override
   String toString() {
-    return 'Pokemon(name: $name, weight: $weight, height: $height, sprites: $sprites)';
+    return 'Pokemon(loaded: $loaded, url: $url, name: $name, weight: $weight, height: $height, sprites: $sprites)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Pokemon &&
+            (identical(other.loaded, loaded) ||
+                const DeepCollectionEquality().equals(other.loaded, loaded)) &&
+            (identical(other.url, url) ||
+                const DeepCollectionEquality().equals(other.url, url)) &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.weight, weight) ||
@@ -156,6 +201,8 @@ class _$_Pokemon implements _Pokemon {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(loaded) ^
+      const DeepCollectionEquality().hash(url) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(weight) ^
       const DeepCollectionEquality().hash(height) ^
@@ -173,13 +220,21 @@ class _$_Pokemon implements _Pokemon {
 
 abstract class _Pokemon implements Pokemon {
   factory _Pokemon(
-      {String name,
+      {@JsonValue(false) bool loaded,
+      @JsonValue('') String url,
+      String name,
       int weight,
       int height,
       Map<String, dynamic> sprites}) = _$_Pokemon;
 
   factory _Pokemon.fromJson(Map<String, dynamic> json) = _$_Pokemon.fromJson;
 
+  @override
+  @JsonValue(false)
+  bool get loaded;
+  @override
+  @JsonValue('')
+  String get url;
   @override
   String get name;
   @override
